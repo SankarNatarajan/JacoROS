@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro"
+name="jaco">
+
+
+
+  <!-- *************** links *************** -->
+	<xacro:macro name="jaco_link" params="name">
+
+		<gazebo reference="jaco_base_link">
+			<material value="PR2/Blue" />
+			<turnGravityOff>true</turnGravityOff>
+		</gazebo>
+
+		<gazebo reference="${name}_1">
+			<material value="PR2/Blue" />
+			<turnGravityOff>true</turnGravityOff>
+		</gazebo>
+	
+		<gazebo reference="${name}_2">
+			<material value="Gazebo/Blue" />
+			<turnGravityOff>true</turnGravityOff>
+		</gazebo>
+	
+		<gazebo reference="${name}_3">
+			<material value="Gazebo/Blue" />
+			<turnGravityOff>true</turnGravityOff>
+		</gazebo>
+	
+		<gazebo reference="${name}_4">
+			<material value="PR2/Blue" />
+			<turnGravityOff>true</turnGravityOff>
+		</gazebo>
+
+		<gazebo reference="${name}_5">
+			<material value="PR2/Blue" />
+			<turnGravityOff>true</turnGravityOff>
+		</gazebo>
+
+		<gazebo reference="${name}_6">
+			<material value="PR2/Blue" />
+			<turnGravityOff>true</turnGravityOff>
+		</gazebo>
+
+
+
+		
+	</xacro:macro>
+
+</robot>
+

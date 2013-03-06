@@ -1,0 +1,36 @@
+<stack>
+  <description brief="jaco_driver">jaco_driver</description>
+  <author>Maintained by Sankaranarayanan Natarajan/sankar.natarajan@dfki.de</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaco_driver</url>
+  <depend stack="ros" />
+
+  <depend stack="common" /> <!-- actionlib -->
+  <depend stack="common_msgs" /> <!-- actionlib_msgs, geometry_msgs -->
+  <depend stack="geometry" /> <!-- tf -->
+  <depend stack="pr2_controllers" /> <!-- single_joint_position_action, joint_trajectory_action -->
+  <depend stack="pr2_mechanism" /> <!-- pr2_controller_manager -->
+  <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins, pr2_gazebo -->
+  <depend stack="robot_model" /> <!-- convex_decomposition, ivcon, robot_state_publisher -->
+  <depend stack="ros_comm" /> <!-- rospy, rostopic -->
+  <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
+  <depend stack="visualization_common" /> <!-- ogre_tools -->
+  <depend stack="xacro" /> <!-- xacro -->
+  <depend stack="control" /> <!-- control_msgs -->
+
+  <depend package="actionlib"/>
+  <depend package="pr2_controllers_msgs"/>
+  <depend package="std_msgs"/>
+
+
+  <depend package="roscpp"/>
+  <depend package="gazebo"/>
+  <depend package="urdf"/>
+  <depend package="xacro"/>
+  <depend package="robot_state_publisher"/>
+  <depend package="jaco_description"/>
+  <depend package="pr2_controller_manager"/>
+  <depend package="robot_mechanism_controllers"/>
+
+</stack>

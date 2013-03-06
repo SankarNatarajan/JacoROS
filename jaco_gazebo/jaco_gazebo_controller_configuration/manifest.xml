@@ -1,0 +1,19 @@
+<package>
+  <description brief="jaco_controller_configuration">
+
+     jaco_gazebo_controller_configuration
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaco_controller_configuration</url>
+  <depend package="pr2_controller_manager"/>
+  <depend package="robot_mechanism_controllers"/>
+  <depend package="pr2_controller_interface" />
+  <depend package="pluginlib" />
+
+
+</package>
+
+

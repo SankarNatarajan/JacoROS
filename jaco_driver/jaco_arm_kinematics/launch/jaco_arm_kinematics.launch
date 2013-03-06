@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<launch>   
+
+	<remap from="collision_map" to="collision_map_occ" />
+	<remap from="collision_map_update" to="collision_map_occ_update" />
+	<remap from="arm_kinematics/get_fk_solver_info" to="get_fk_solver_info" />
+	<remap from="arm_kinematics/get_fk" to="get_fk" />
+
+	<!-- start the arm_kinematics node for fk services -->
+	<!--node pkg="arm_kinematics" type="arm_kinematics" name="arm_kinematics" output="screen" >
+		<param name="root_name" value="jaco_base_link" />
+		<param name="tip_name" value="jaco_link_6" />
+	</node-->
+
+	<!-- start the arm_kinematics_constraint_aware node for constraint_aware services -->
+	<node pkg="jaco_arm_kinematics" type="jaco_arm_kinematics_node" name="jaco_arm_kinematics" output="screen">
+		<param name="root_name" value="jaco_base_link" />
+		<param name="tip_name" value="jaco_link_6" />
+		<param name="robot_description" command="cat $(find jaco_description)/urdf/jaco_arm.urdf.xml" /> 		
+		<param name="group" value="arm" />
+		<param name="kinematics_solver" value=" jaco_arm_kinematics/JacoArmKinematicsPlugin" />
+	</node>
+      
+</launch>

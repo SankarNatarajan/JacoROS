@@ -1,0 +1,30 @@
+<package>
+  <description brief="A kinematics plugin for the Jaco arm based on OpenRave">
+
+     This package provides an plugin implementation of the kinematics_base interface to establish constraint aware kinematics services. 
+     The plugin combines the OpenRave IK service from the generated ik.cpp file.
+
+  </description>
+
+  <author>Sankaranarayanan Natarajan/sankar.natarajan@dfki.de</author>
+  <license>GPL v3 or later</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaco_arm_kinematics</url>
+
+  <depend package="pluginlib"/>
+  <depend package="kinematics_base"/>
+  <depend package="urdf"/>
+  <depend package="pluginlib"/>
+  <depend package="arm_kinematics_constraint_aware"/>
+  <depend package="jaco"/>
+  <depend package="collision_space"/>
+  <depend package="planning_models"/>
+  <depend package="planning_environment"/>
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -ljaco_arm_kinematics"/>
+    <kinematics_base plugin="${prefix}/jaco_plugins.xml" />
+  </export>
+
+</package>
+
+

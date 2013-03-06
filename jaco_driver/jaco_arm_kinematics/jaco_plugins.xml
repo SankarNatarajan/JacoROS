@@ -1,0 +1,7 @@
+<library path="lib/libjaco_arm_kinematics">
+  <class name="jaco_arm_kinematics/JacoArmKinematicsPlugin" type="jaco_arm_kinematics::JacoArmKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>
+          A plugin implementation of the jaco's kinematics based on the kinematics_base interface and using OpenRave 
+    </description>
+  </class>
+</library>

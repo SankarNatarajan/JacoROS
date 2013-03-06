@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<robot name="jaco" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- transmissions are required by the controller manager (here: for simulation in gazebo) -->
+
+	
+
+		<transmission name="jaco_1_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_1_motor"/>
+			<joint name="jaco_joint_1"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+	
+		<transmission name="jaco_2_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_2_motor"/>
+			<joint name="jaco_joint_2"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+		
+		<transmission name="jaco_3_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_3_motor"/>
+			<joint name="jaco_joint_3"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+
+		<transmission name="jaco_4_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_4_motor"/>
+			<joint name="jaco_joint_4"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+
+		<transmission name="jaco_5_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_5_motor"/>
+			<joint name="jaco_joint_5"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+
+		<transmission name="jaco_6_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_6_motor"/>
+			<joint name="jaco_joint_6"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+
+		<transmission name="jaco_finger_1_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_finger_1_motor"/>
+			<joint name="jaco_finger_joint_1"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+
+		<transmission name="jaco_finger_2_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_finger_2_motor"/>
+			<joint name="jaco_finger_joint_2"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+
+		<transmission name="jaco_finger_3_trans" type="pr2_mechanism_model/SimpleTransmission">
+			<actuator name="jaco_finger_3_motor"/>
+			<joint name="jaco_finger_joint_3"/>
+			<mechanicalReduction>1</mechanicalReduction>
+			<motorTorqueConstant>1</motorTorqueConstant>
+		</transmission>
+
+		
+
+
+</robot>

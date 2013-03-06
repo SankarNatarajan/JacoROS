@@ -1,0 +1,21 @@
+<package>
+  <description brief="jaco">
+
+     jaco
+
+  </description>
+  <author>Sankaranarayanan Natarajan/sankar.natarajan@dfki.de</author>
+  <license>GPL v3 or later</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaco</url>
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+  <depend package="urdf"/>
+  <depend package="actionlib"/> 
+  <depend package="actionlib_msgs"/>
+  <depend package="trajectory_msgs"/>
+  <depend package="control_msgs"/>
+  
+</package>
+
+

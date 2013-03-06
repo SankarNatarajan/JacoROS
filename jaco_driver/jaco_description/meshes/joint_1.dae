@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.59.0 r39307</authoring_tool>
+    </contributor>
+    <created>2011-09-01T10:41:30</created>
+    <modified>2011-09-01T10:41:30</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov>49.13434</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear>0.1</znear>
+            <zfar>100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Lamp-light" name="Lamp">
+      <technique_common>
+        <point>
+          <color>1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <adapt_thresh>0.000999987</adapt_thresh>
+          <area_shape>0</area_shape>
+          <area_size>1</area_size>
+          <area_sizey>1</area_sizey>
+          <area_sizez>1</area_sizez>
+          <atm_distance_factor>1</atm_distance_factor>
+          <atm_extinction_factor>1</atm_extinction_factor>
+          <atm_turbidity>2</atm_turbidity>
+          <att1>0</att1>
+          <att2>1</att2>
+          <backscattered_light>1</backscattered_light>
+          <bias>1</bias>
+          <blue>1</blue>
+          <buffers>1</buffers>
+          <bufflag>0</bufflag>
+          <bufsize>2880</bufsize>
+          <buftype>2</buftype>
+          <clipend>30.002</clipend>
+          <clipsta>1.000799</clipsta>
+          <compressthresh>0.04999995</compressthresh>
+          <dist>29.99998</dist>
+          <energy>1</energy>
+          <falloff_type>2</falloff_type>
+          <filtertype>0</filtertype>
+          <flag>0</flag>
+          <gamma>1</gamma>
+          <green>1</green>
+          <halo_intensity>1</halo_intensity>
+          <horizon_brightness>1</horizon_brightness>
+          <mode>8192</mode>
+          <ray_samp>1</ray_samp>
+          <ray_samp_method>1</ray_samp_method>
+          <ray_samp_type>0</ray_samp_type>
+          <ray_sampy>1</ray_sampy>
+          <ray_sampz>1</ray_sampz>
+          <red>1</red>
+          <samp>3</samp>
+          <shadhalostep>0</shadhalostep>
+          <shadow_b>0</shadow_b>
+          <shadow_g>0</shadow_g>
+          <shadow_r>0</shadow_r>
+          <shadspotsize>45</shadspotsize>
+          <sky_colorspace>0</sky_colorspace>
+          <sky_exposure>1</sky_exposure>
+          <skyblendfac>1</skyblendfac>
+          <skyblendtype>1</skyblendtype>
+          <soft>3</soft>
+          <spotblend>0.15</spotblend>
+          <spotsize>75</spotsize>
+          <spread>1</spread>
+          <sun_brightness>1</sun_brightness>
+          <sun_effect_type>0</sun_effect_type>
+          <sun_intensity>1</sun_intensity>
+          <sun_size>1</sun_size>
+          <type>0</type>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_geometries>
+    <geometry id="JACO_simplified_m_000-mesh">
+      <mesh>
+        <source id="JACO_simplified_m_000-mesh-positions">
+          <float_array id="JACO_simplified_m_000-mesh-positions-array" count="252">9.963226 62.1431 155.0385 9.502497 55.9951 1.537502 9.502497 55.9951 155.0385 9.963226 49.84711 1.537502 9.963226 49.84711 155.0385 11.33512 43.83646 1.537502 11.33512 43.83646 155.0385 13.58753 38.0974 1.537502 13.58753 38.0974 155.0385 16.67015 32.75815 1.537502 16.67015 32.75815 155.0385 20.51411 27.93798 1.537502 20.51411 27.93798 155.0385 25.03355 23.74456 1.537502 25.03355 23.74456 155.0385 30.1275 20.27156 1.537502 30.1275 20.27156 155.0385 35.68218 17.59657 1.537502 35.68218 17.59657 155.0385 41.57351 15.77933 1.537502 41.57351 15.77933 155.0385 47.66988 14.86045 1.537502 47.66988 14.86045 155.0385 53.83512 14.86045 1.537502 53.83512 14.86045 155.0385 59.93149 15.77933 1.537502 59.93149 15.77933 155.0385 65.82282 17.59657 1.537502 65.82282 17.59657 155.0385 71.37751 20.27156 1.537502 71.37751 20.27156 155.0385 76.47145 23.74456 1.537502 76.47145 23.74456 155.0385 80.99089 27.93798 1.537502 80.99089 27.93798 155.0385 84.83485 32.75815 1.537502 84.83485 32.75815 155.0385 87.91747 38.0974 1.537502 87.91747 38.0974 155.0385 90.16988 43.83646 1.537502 90.16988 43.83646 155.0385 91.54177 49.84711 1.537502 91.54177 49.84711 155.0385 92.0025 55.9951 1.537502 92.0025 55.9951 155.0385 91.54177 62.1431 1.537502 91.54177 62.1431 155.0385 90.16988 68.15376 1.537502 90.16988 68.15376 155.0385 87.91747 73.89281 1.537502 87.91747 73.89281 155.0385 84.83485 79.23206 1.537502 84.83485 79.23206 155.0385 80.99089 84.05224 1.537502 80.99089 84.05224 155.0385 76.47145 88.24566 1.537502 76.47145 88.24566 155.0385 71.37751 91.71866 1.537502 71.37751 91.71866 155.0385 65.82282 94.39365 1.537502 65.82282 94.39365 155.0385 59.93149 96.21089 1.537502 59.93149 96.21089 155.0385 53.83512 97.12976 1.537502 53.83512 97.12976 155.0385 47.66988 97.12976 1.537502 47.66988 97.12976 155.0385 41.57351 96.21089 1.537502 41.57351 96.21089 155.0385 35.68218 94.39365 1.537502 35.68218 94.39365 155.0385 30.1275 91.71866 1.537502 30.1275 91.71866 155.0385 25.03355 88.24566 1.537502 25.03355 88.24566 155.0385 20.51411 84.05224 1.537502 20.51411 84.05224 155.0385 16.67015 79.23206 1.537502 16.67015 79.23206 155.0385 13.58753 73.89281 1.537502 13.58753 73.89281 155.0385 11.33512 68.15376 1.537502 11.33512 68.15376 155.0385 9.963226 62.1431 1.537502</float_array>
+          <technique_common>
+            <accessor source="#JACO_simplified_m_000-mesh-positions-array" count="84" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="JACO_simplified_m_000-mesh-normals">
+          <float_array id="JACO_simplified_m_000-mesh-normals-array" count="252">-0.9972038 0.07473015 0 -0.9972038 -0.07473015 0 -0.9972038 -0.07473015 0 -0.9749279 -0.222521 0 -0.9749279 -0.222521 0 -0.9308738 -0.365341 0 -0.9308738 -0.365341 0 -0.8660253 -0.5000002 0 -0.8660253 -0.5000002 0 -0.7818316 -0.6234896 0 -0.7818316 -0.6234896 0 -0.6801728 -0.7330518 0 -0.6801728 -0.7330518 0 -0.5633201 -0.8262388 0 -0.5633201 -0.8262388 0 -0.4338837 -0.900969 0 -0.4338837 -0.900969 0 -0.2947551 -0.9555729 0 -0.2947551 -0.9555729 0 -0.1490423 -0.9888308 0 -0.1490423 -0.9888308 0 0 -1 0 0 -1 0 0.1490423 -0.9888308 0 0.1490423 -0.9888308 0 0.2947552 -0.9555727 0 0.2947552 -0.9555727 0 0.4338833 -0.900969 0 0.4338833 -0.900969 0 0.5633203 -0.8262386 0 0.5633203 -0.8262386 0 0.6801725 -0.7330521 0 0.6801725 -0.7330521 0 0.7818319 -0.6234893 0 0.7818319 -0.6234893 0 0.8660253 -0.5000003 0 0.8660253 -0.5000003 0 0.9308738 -0.3653409 0 0.9308738 -0.3653409 0 0.9749282 -0.2225199 0 0.9749282 -0.2225199 0 0.9972037 -0.07473057 0 0.9972037 -0.07473057 0 0.9972037 0.07473057 0 0.9972037 0.07473057 0 0.9749282 0.2225199 0 0.9749282 0.2225199 0 0.9308738 0.3653409 0 0.9308738 0.3653409 0 0.8660253 0.5000003 0 0.8660253 0.5000003 0 0.7818324 0.6234887 0 0.7818324 0.6234887 0 0.6801722 0.7330524 0 0.6801722 0.7330524 0 0.5633205 0.8262384 0 0.5633205 0.8262384 0 0.4338825 0.9009694 0 0.4338825 0.9009694 0 0.2947558 0.9555727 0 0.2947558 0.9555727 0 0.1490417 0.9888308 0 0.1490417 0.9888308 0 0 1 0 0 1 0 -0.1490417 0.9888308 0 -0.1490417 0.9888308 0 -0.2947556 0.9555727 0 -0.2947556 0.9555727 0 -0.433883 0.9009693 0 -0.433883 0.9009693 0 -0.5633202 0.8262386 0 -0.5633202 0.8262386 0 -0.6801725 0.7330522 0 -0.6801725 0.7330522 0 -0.781832 0.623489 0 -0.781832 0.623489 0 -0.8660253 0.5000002 0 -0.8660253 0.5000002 0 -0.9308738 0.365341 0 -0.9308738 0.365341 0 -0.9749279 0.222521 0 -0.9749279 0.222521 0 -0.9972038 0.07473015 0</float_array>
+          <technique_common>
+            <accessor source="#JACO_simplified_m_000-mesh-normals-array" count="84" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="JACO_simplified_m_000-mesh-vertices">
+          <input semantic="POSITION" source="#JACO_simplified_m_000-mesh-positions"/>
+        </vertices>
+        <polylist count="84">
+          <input semantic="VERTEX" source="#JACO_simplified_m_000-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#JACO_simplified_m_000-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>0 0 1 0 2 0 2 1 1 1 3 1 2 2 3 2 4 2 4 3 3 3 5 3 4 4 5 4 6 4 6 5 5 5 7 5 6 6 7 6 8 6 8 7 7 7 9 7 8 8 9 8 10 8 10 9 9 9 11 9 10 10 11 10 12 10 12 11 11 11 13 11 12 12 13 12 14 12 14 13 13 13 15 13 14 14 15 14 16 14 16 15 15 15 17 15 16 16 17 16 18 16 18 17 17 17 19 17 18 18 19 18 20 18 20 19 19 19 21 19 20 20 21 20 22 20 22 21 21 21 23 21 22 22 23 22 24 22 24 23 23 23 25 23 24 24 25 24 26 24 26 25 25 25 27 25 26 26 27 26 28 26 28 27 27 27 29 27 28 28 29 28 30 28 30 29 29 29 31 29 30 30 31 30 32 30 32 31 31 31 33 31 32 32 33 32 34 32 34 33 33 33 35 33 34 34 35 34 36 34 36 35 35 35 37 35 36 36 37 36 38 36 38 37 37 37 39 37 38 38 39 38 40 38 40 39 39 39 41 39 40 40 41 40 42 40 42 41 41 41 43 41 42 42 43 42 44 42 44 43 43 43 45 43 44 44 45 44 46 44 46 45 45 45 47 45 46 46 47 46 48 46 48 47 47 47 49 47 48 48 49 48 50 48 50 49 49 49 51 49 50 50 51 50 52 50 52 51 51 51 53 51 52 52 53 52 54 52 54 53 53 53 55 53 54 54 55 54 56 54 56 55 55 55 57 55 56 56 57 56 58 56 58 57 57 57 59 57 58 58 59 58 60 58 60 59 59 59 61 59 60 60 61 60 62 60 62 61 61 61 63 61 62 62 63 62 64 62 64 63 63 63 65 63 64 64 65 64 66 64 66 65 65 65 67 65 66 66 67 66 68 66 68 67 67 67 69 67 68 68 69 68 70 68 70 69 69 69 71 69 70 70 71 70 72 70 72 71 71 71 73 71 72 72 73 72 74 72 74 73 73 73 75 73 74 74 75 74 76 74 76 75 75 75 77 75 76 76 77 76 78 76 78 77 77 77 79 77 78 78 79 78 80 78 80 79 79 79 81 79 80 80 81 80 82 80 82 81 81 81 83 81 0 82 82 82 83 82 0 83 83 83 1 83</p>
+        </polylist>
+      </mesh>      
+      <extra><technique profile="MAYA"><double_sided>1</double_sided></technique></extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="JACO_simplified_m_000" type="NODE">
+        <translate sid="location">-50.68811 -55.93848 -1.536769</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#JACO_simplified_m_000-mesh"/>
+      </node>      
+      <node id="Lamp" type="NODE">
+        <translate sid="location">4.076245 1.005454 5.903862</translate>
+        <rotate sid="rotationZ">0 0 1 106.9363</rotate>
+        <rotate sid="rotationY">0 1 0 3.163707</rotate>
+        <rotate sid="rotationX">1 0 0 37.26105</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_light url="#Lamp-light"/>
+      </node>
+      <node id="Camera" type="NODE">
+        <translate sid="location">7.481132 -6.50764 5.343665</translate>
+        <rotate sid="rotationZ">0 0 1 46.69194</rotate>
+        <rotate sid="rotationY">0 1 0 0.6197679</rotate>
+        <rotate sid="rotationX">1 0 0 63.55929</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

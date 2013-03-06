@@ -1,0 +1,15 @@
+<package>
+  <description brief="jaco_description">
+
+     jaco_description - URDF model of the Kinova Jaco arm.
+
+  </description>
+  <author>Sankaranarayanan Natarajan/sankar.natarajan@dfki.de</author>
+  <license>GPL v3 or later</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaco_description</url>
+  <depend package="urdf"/>
+
+</package>
+
+

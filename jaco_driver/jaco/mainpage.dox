@@ -1,0 +1,22 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b jaco is a package that provides low level access to the jaco manipulator. It consists of a c++ wrapper to access the c# dll provide by the manufacture, to access the
+jaco manipulator. 
+
+\section codeapi Code API
+
+<!--
+Provide links to specific auto-generated API documentation within your
+package that is of particular interest to a reader. Doxygen will
+document pretty much every part of your code, so do your best here to
+point the reader to the actual API.
+
+If your codebase is fairly large or has different sets of APIs, you
+should use the doxygen 'group' tag to keep these APIs together. For
+example, the roscpp documentation has 'libros' group.
+-->
+
+
+*/

@@ -1,0 +1,18 @@
+jaco_gripper_controller:
+
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - jaco_finger_joint_1
+    - jaco_finger_joint_2
+    - jaco_finger_joint_3
+
+
+
+  gains:
+    jaco_finger_joint_1:
+      {p: 2400.0, d: 1800.0, i: 800.0, i_clamp: 800.0}
+    jaco_finger_joint_2:
+      {p: 2400.0, d: 1800.0, i: 800.0, i_clamp: 800.0}
+    jaco_finger_joint_3:
+      {p: 2400.0, d: 1800.0, i: 800.0, i_clamp: 800.0}
+

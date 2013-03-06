@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<robot name="jaco"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+	xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+	xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+	xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+	xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics">
+
+	<gazebo>
+		<!-- controller for the 6 arm joints -->
+		<controller:gazebo_ros_controller_manager name="gazebo_ros_controller_manager" plugin="libgazebo_ros_controller_manager.so">
+		<alwaysOn>true</alwaysOn>
+		<updateRate>1000.0</updateRate>
+		<robotParam>robot_description</robotParam>
+		</controller:gazebo_ros_controller_manager>
+	</gazebo>
+
+
+	<include filename="$(find jaco_description)/urdf/gazebo/jaco.gazebo.xacro" />
+	<include filename="$(find jaco_description)/urdf/gazebo/jaco.transmissions.xacro" />
+
+	<material name="JacoGrey">
+	<color rgba="0.2 0.2 0.9 1.0"/>
+	</material>
+
+
+	<link name="world"/>
+	<joint name="base_block_joint" type="fixed">
+		<parent link="world" />
+		<origin xyz="0 0 1" rpy="0 0 0" />
+		<child link="jaco_base_link" />
+	</joint> 
+
+	<!-- The base joint & link -->
+
+	<link name="jaco_base_link">
+		<inertial>
+			<mass value="6" />
+			<!--origin xyz="0 0 -0.0525" rpy="0 0 0"/-->
+          		<origin xyz="0 0 0.0" rpy="0 0 0"/>
+			<inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+		</inertial> 
+		<visual>
+			<material name="JacoGrey" />
+			<!--origin xyz="0 0 -0.0525" rpy="0 0 0"/-->
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_1.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<!--origin xyz="0 0 -0.0525" rpy="0 0 0"/-->
+			<geometry> 
+				<mesh filename="package://jaco_description/meshes/joint_1.dae" 
+				scale="0.001 0.001 0.001"/>     
+			</geometry> 
+		</collision>
+	</link>
+	<gazebo reference="jaco_base_link">
+		<material>Gazebo/Yellow</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+	<!-- First revolute joint & link -->
+
+	<joint name="jaco_joint_1" type="revolute">
+		<!--origin xyz="0 0 0.2102" rpy="0 0 0"/--> 
+        	<origin xyz="0 0 0.2725" rpy="0 0 0"/> 
+		<axis xyz="0 0 -1" rpy="0 0 0"/>
+		<parent link="jaco_base_link"/>
+		<child link="jaco_link_1"/>
+		<limit lower="-3.1415926535897931" upper="3.1415926535897931" effort="1" velocity="2.0"/>
+	</joint>
+	<link name="jaco_link_1">
+		<inertial>
+			<mass value="4.5"/>
+
+			<inertia ixx="100.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="100.0" />
+			<origin/>
+		</inertial>
+		<visual>
+			<material name="JacoGrey" />
+			<origin xyz="0 0 -0.12" rpy="0 0 -1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_2.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 -0.12" rpy="0 0 -1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_2.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="jaco_link_1">
+		<material>Gazebo/Red</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+	<!-- Second revolute joint & link -->
+
+	<joint name="jaco_joint_2" type="revolute">
+		<origin xyz="0 0 0" rpy="-1.570796327 0 0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="jaco_link_1"/>
+		<child link="jaco_link_2"/>
+		<limit lower="-3.6651914291881" upper="0.57595865315813" effort="1" velocity="3.1415926535897931"/>
+	</joint>
+	<link name="jaco_link_2">
+		<inertial>
+			<mass value="3.8"/>
+			<inertia ixx="100.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="100.0" />
+			<origin/>
+		</inertial>
+		<visual>
+			<material name="JacoGrey" />
+			<origin xyz="0 0 0.015" rpy="0 1.570796327 0"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_3.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0.015" rpy="0 1.570796327 0"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_3.dae" 
+				scale="0.001 0.001 0.001"/> 
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="jaco_link_2">
+		<material>Gazebo/Blue</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+  
+	<!-- Third revolute joint & link -->
+
+	<joint name="jaco_joint_3" type="revolute">
+		<origin xyz="0.4100 0 0.012" rpy="0 0 0"/>
+		<axis xyz="0 0 -1"/>
+		<parent link="jaco_link_2"/>
+		<child link="jaco_link_3"/>
+		<limit lower="-1.221730476396" upper="4.2935099599061" effort="1" velocity="3.1415926535897931"/>
+	</joint>
+	<link name="jaco_link_3">
+		<inertial>
+			<mass value="2"/>
+			<inertia ixx="100.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="100.0" />
+			<origin/>
+		</inertial>
+		<visual>
+			<material name="JacoGrey" />
+			<origin xyz="0 0 -0.012" rpy="0 1.570796327 1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_4.dae" 
+				scale="1.000 1.000 1.000"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 -0.012" rpy="0 1.570796327 1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_4.dae" 
+				scale="1.000 1.000 1.000"/> 
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="jaco_link_3">
+		<material>Gazebo/Red</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+	<!-- Fourth revolute joint & link -->
+	<joint name="jaco_joint_4" type="revolute">
+		<origin xyz="0 0.24927682300748782 0 " rpy="-1.570796327 0 0"/>
+		<axis xyz="0 0 -1"/>
+		<parent link="jaco_link_3"/>
+		<child link="jaco_link_4"/>
+		<limit lower="-3.1415926535897931" upper="3.1415926535897931" effort="1" velocity="2.0"/>
+	</joint>
+	<link name="jaco_link_4">
+		<inertial>
+			<mass value="1.5"/>
+			<inertia ixx="100.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="100.0" />
+			<origin/>
+		</inertial>
+		<visual>
+			<material name="JacoGrey" />
+			<origin xyz="0 0 -0.042276823" rpy="0 0 -1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_5.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 -0.042276823" rpy="0 0 -1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_5.dae" 
+				scale="0.001 0.001 0.001"/> 
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="jaco_link_4">
+		<material>Gazebo/Blue</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+
+	<!-- Fifth revolute joint & link -->
+	<joint name="jaco_joint_5" type="revolute">
+		<origin xyz="0 -0.069262292 0.048497979" rpy="0.959931089 0 0"/>
+		<axis xyz="0 0 -1"/>
+		<parent link="jaco_link_4"/>
+		<child link="jaco_link_5"/>
+		<limit lower="-3.1415926535897931" upper="3.1415926535897931" effort="1" velocity="2.0"/>
+	</joint>
+	<link name="jaco_link_5">
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="100.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="100.0" />
+			<origin/>
+		</inertial>
+		<visual>
+			<material name="JacoGrey" />
+			<origin xyz="0 0 -0.042276823" rpy="0 -0.959931089 1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_6.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 -0.042276823" rpy="0 -0.959931089 1.570796327"/>
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/joint_6.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="jaco_link_5">
+		<material>Gazebo/Red</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+	<!-- Sixth revolute joint & link -->
+	<joint name="jaco_joint_6" type="revolute">
+		<!--origin xyz="0 -0.186174274 0.13036063" rpy="0.959931089 0 0"/-->
+		<origin xyz="0 -0.186174274 0.13036063" rpy="-0.959931089 0 3.1415926535897931"/>
+		<origin xyz="0 0 0" rpy="0 0 -3.14"/>
+		<axis xyz="0 0 -1"/>
+		<parent link="jaco_link_5"/>
+		<child link="jaco_link_6"/>
+		<limit lower="-3.5415926535897931" upper="3.5415926535897931" effort="1" velocity="2.0"/>
+	</joint>
+	<link name="jaco_link_6">
+		<inertial>
+			<mass value="0.8"/>
+			<inertia ixx="100.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="100.0" />
+			<origin/>
+		</inertial>
+		<visual>
+			<material name="JacoGrey" />
+			<!--origin xyz="0 0 -0.1850" rpy="0 0 -3.1415926535897931"/-->         
+			<origin xyz="0 0 -0.1850" rpy="0 0 0"/>         
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/hand_with_noFinger.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<!--origin xyz="0 0 -0.1850" rpy="0 0 -3.1415926535897931"/--> 
+			<origin xyz="0 0 -0.1850" rpy="0 0 0"/>         
+			<geometry>
+				<mesh filename="package://jaco_description/meshes/hand_with_noFinger.dae" 
+				scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="jaco_link_6">
+		<material>Gazebo/Blue</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+	<!-- first finger joint & link -->
+   	<joint name="jaco_finger_joint_1" type="revolute">
+        <!--origin xyz="-0.036 -0.021 -0.07" rpy="0 0 0"/--> <!-- changed becuase it look funny in simulation-->
+        <origin xyz="-0.036 -0.021 -0.09" rpy="0 0 0"/>  
+        <axis xyz="0 1 0"/>
+        <parent link="jaco_link_6"/>
+        <child link="jaco_finger_link_1"/>
+		<limit lower="-3.1415926535897931" upper="3.1415926535897931" effort="1" velocity="2.0"/>
+      </joint>
+      <link name="jaco_finger_link_1">
+		<inertial>
+			<mass value="0.05"/>
+			<inertia ixx="10.0" ixy="0.0"  ixz="0.0"  iyy="10.0"  iyz="0.0"  izz="10.0" />
+			<origin/>
+		</inertial>
+        <visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://jaco_description/meshes/finger.dae" 
+                scale="1 1 1"/>
+          </geometry>
+        </visual>
+	<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+	<geometry>
+            <mesh filename="package://jaco_description/meshes/finger.dae" 
+                scale="1 1 1"/>  
+	</geometry>
+	</collision>
+      </link>
+	<gazebo reference="jaco_finger_link_1">
+		<material>Gazebo/Blue</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>	
+
+
+	<!-- second finger joint & link -->
+   	<joint name="jaco_finger_joint_2" type="revolute">
+        <!--origin xyz="-0.036 0.021 -0.07" rpy="0 0 0"/-->
+	<origin xyz="-0.036 0.021 -0.09" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <parent link="jaco_link_6"/>
+        <child link="jaco_finger_link_2"/>
+		<limit lower="-3.1415926535897931" upper="3.1415926535897931" effort="1" velocity="2.0"/>
+      </joint>
+      <link name="jaco_finger_link_2">
+		<inertial>
+			<mass value="0.05"/>
+			<inertia ixx="10.0" ixy="0.0"  ixz="0.0"  iyy="10.0"  iyz="0.0"  izz="10.0" />
+			<origin/>
+		</inertial>
+        <visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://jaco_description/meshes/finger.dae" 
+                scale="1 1 1"/>
+          </geometry>
+        </visual>
+	<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+	<geometry>
+            <mesh filename="package://jaco_description/meshes/finger.dae" 
+                scale="1 1 1"/>  
+	</geometry>
+	</collision>
+        </link>
+	<gazebo reference="jaco_finger_link_2">
+		<material>Gazebo/Blue</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+
+
+
+	<!-- third finger joint & link -->
+   	<joint name="jaco_finger_joint_3" type="revolute">
+        <!--origin xyz="0.036 -0 -0.07" rpy="0 0 3.14"/-->
+	<origin xyz="0.036 -0 -0.09" rpy="0 0 3.14"/>
+        <axis xyz="0 1 0"/>
+        <parent link="jaco_link_6"/>
+        <child link="jaco_finger_link_3"/>
+		<limit lower="-3.1415926535897931" upper="3.1415926535897931" effort="1" velocity="2.0"/>
+      </joint>
+      <link name="jaco_finger_link_3">
+		<inertial>
+			<mass value="0.05"/>
+			<inertia ixx="10.0" ixy="0.0"  ixz="0.0"  iyy="10.0"  iyz="0.0"  izz="10.0" />
+			<origin/>
+		</inertial>
+        <visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://jaco_description/meshes/finger.dae" 
+                scale="1 1 1"/>
+          </geometry>
+        </visual>
+	<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+	<geometry>
+            <mesh filename="package://jaco_description/meshes/finger.dae" 
+                scale="1 1 1"/> 
+	</geometry>
+	</collision>
+      </link>
+	<gazebo reference="jaco_finger_link_3">
+		<material>Gazebo/Blue</material>
+		<turnGravityOff>true</turnGravityOff>
+	</gazebo>
+
+
+</robot>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- start up world -->
+  <include file="$(find gazebo_worlds)/launch/empty_world.launch" />
+
+  <!-- load jaco urdf -->
+  <!-- send urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find jaco_description)/urdf/gazebo/jaco.urdf.xacro'" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_jaco_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model jaco " respawn="false" output="screen" />
+
+  <!-- Default Controllers -->
+  <!--rosparam command="load" file="$(find jaco_gazebo_controller_configuration)/controller/jaco_arm_controller.yaml" /-->
+  <!--controller manager-->
+  
+  <include file="$(find jaco_gazebo_controller_configuration)/launch/joint_trajectory_controller.launch" />
+  <!-- Controller Manager -->
+  <include file="$(find pr2_controller_manager)/controller_manager.launch" />
+
+</launch>
+

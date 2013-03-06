@@ -1,0 +1,9 @@
+#goal definition
+jaco/JacoPoseStamped poseGoal
+---
+#result definition
+int32 error_code
+int32 SUCCESSFUL = 0
+int32 INVALID_GOAL = -1
+---
+

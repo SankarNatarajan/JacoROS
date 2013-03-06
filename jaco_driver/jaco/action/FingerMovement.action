@@ -1,0 +1,19 @@
+# Whether to open or close the finger
+string task
+string OPEN = OPEN
+string CLOSE = CLOSE
+
+---
+#result definition
+#string solution
+int32 result_code
+int32 EMPTY = 1 # result for opening
+int32 GRASPED = 0
+int32 NOTGRASPED = -1
+int32 ERROR_OPEN = -2
+int32 ERROR_CLOSE = -3
+
+---
+
+
+

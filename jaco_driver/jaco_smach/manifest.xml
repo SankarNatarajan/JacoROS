@@ -1,0 +1,30 @@
+<package>
+  <description brief="jaco_smach">
+
+     jaco_smach
+
+  </description>
+  <author>Sankaranarayanan Natarajan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaco_smach</url>
+  <depend package="rostopic"/>
+  <depend package='rospy'/>
+  <depend package='smach'/>
+  <depend package='smach_ros'/>
+  <depend package="smach_msgs"/>
+  <depend package='actionlib'/>
+  <depend package="actionlib_msgs"/>
+  <depend package="arm_navigation_msgs"/>
+  <depend package="kinematics_msgs"/>
+  <depend package="move_arm"/>
+  <depend package="std_msgs"/>
+  <depend package="jaco"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/msg/cpp"/>
+  </export>
+
+</package>
+
+

@@ -1,0 +1,28 @@
+jaco_arm_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - jaco_joint_1
+    - jaco_joint_2
+    - jaco_joint_3
+    - jaco_joint_4
+    - jaco_joint_5
+    - jaco_joint_6
+
+  gains:
+    jaco_joint_1:
+      {p: 400.0, d: 5500.0, i: 1800.0, i_clamp: 2.0}
+    jaco_joint_2:
+      {p: 400.0, d: 5500.0, i: 1800.0, i_clamp: 2.0}
+    jaco_joint_3:
+      {p: 400.0, d: 5500.0, i: 1800.0, i_clamp: 2.0}
+    jaco_joint_4:
+      {p: 400.0, d: 5500.0, i: 1800.0, i_clamp: 2.0}
+    jaco_joint_5:
+      {p: 400.0, d: 5500.0, i: 1800.0, i_clamp: 2.0}
+    jaco_joint_6:
+      {p: 400.0, d: 5500.0, i: 1800.0, i_clamp: 2.0}
+
+
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- load jaco urdf -->        
+	<param name="robot_description" command="cat $(find jaco_description)/urdf/jaco_arm.urdf.xml" />       
+        <!-- state publisher -->
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />	
+	<!-- starting the jaco arm -->
+        <node name="jaco_node" pkg="jaco" type="jaco" args='$(find jaco)/../CSharpWrapper/CSharpWrapper/bin/Debug/CSharpWrapper.dll'  output="screen"/>
+
+</launch>
+
+

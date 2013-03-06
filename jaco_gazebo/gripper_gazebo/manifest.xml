@@ -1,0 +1,17 @@
+<package>
+  <description brief="gripper_gazebo">
+
+     gripper_gazebo
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gripper_gazebo</url>
+  <depend package="actionlib"/>
+  <depend package="roscpp"/>
+  <depend package="pr2_controllers_msgs"/>
+
+</package>
+
+

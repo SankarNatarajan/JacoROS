@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<launch>
+	<include file="$(find jaco_arm_navigation)/launch/jaco_planning_environment.launch" />
+
+	<!--node pkg="arm_kinematics_constraint_aware" type="arm_kinematics_constraint_aware" name="jaco_jaco_arm_kinematics">    
+		<param name="group" type="string" value="jaco_arm" />
+		<param name="jaco_arm/root_name" type="string" value="jaco_base_link" />
+		<param name="jaco_arm/tip_name" type="string" value="jaco_link_6" />
+		<param name="kinematics_solver" type="string" value="arm_kinematics_constraint_aware/KDLArmKinematicsPlugin" />
+	</node-->
+		
+        <node pkg="arm_kinematics_constraint_aware" type="arm_kinematics_constraint_aware" name="jaco_arm_kinematics_aware" output="screen"> 
+		<param name="robot_description" command="cat $(find jaco_description)/urdf/jaco_arm.urdf.xml" /> 		
+		<param name="group" value="jaco_arm" />
+		<param name="jaco_arm/root_name" value="jaco_base_link" />
+		<param name="jaco_arm/tip_name" value="jaco_link_6" />		
+		<param name="kinematics_solver" value=" jaco_arm_kinematics/JacoArmKinematicsPlugin" />		
+	</node>
+
+	<node pkg="jaco_arm_kinematics" type="jaco_arm_kinematics_node" name="jaco_arm_kinematics" output="screen">
+		<param name="robot_description" command="cat $(find jaco_description)/urdf/jaco_arm.urdf.xml" /> 		
+		<param name="group" value="jaco_arm" />
+		<param name="root_name" value="jaco_base_link" />
+		<param name="tip_name" value="jaco_link_6" />				
+		<param name="kinematics_solver" value=" jaco_arm_kinematics/JacoArmKinematicsPlugin" />		
+	</node>
+</launch>

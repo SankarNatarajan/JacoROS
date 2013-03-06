@@ -1,0 +1,9 @@
+<stack>
+  <description brief="jaco_gazebo">jaco_gazebo</description>
+  <author>Maintained by Sankaranarayanan Natarajan</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaco_gazebo</url>
+  <depend stack="ros" />
+
+</stack>

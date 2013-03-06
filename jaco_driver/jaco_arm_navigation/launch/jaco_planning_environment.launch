@@ -1,0 +1,4 @@
+<launch>
+    <param name="robot_description" textfile="$(find jaco_description)/urdf/jaco_arm.urdf.xml" />
+    <rosparam command="load" ns="robot_description_planning" file="$(find jaco_arm_navigation)/config/jaco_planning_description.yaml" />
+</launch>
